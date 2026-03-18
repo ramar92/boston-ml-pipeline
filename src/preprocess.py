@@ -1,9 +1,10 @@
-import pandas as pd
+from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_boston
+import pandas as pd
 
 def load_and_split():
-    data = load_boston()
+    data = fetch_california_housing()
+    
     X = pd.DataFrame(data.data, columns=data.feature_names)
     y = pd.Series(data.target)
 
